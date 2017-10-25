@@ -50,3 +50,6 @@ source "$HOME/.zsh/aliases.zsh"
 source "$HOME/.zsh/exports.zsh"
 source "$HOME/.zsh/rvm.zsh"
 
+
+# FZF config
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
