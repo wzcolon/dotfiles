@@ -17,7 +17,7 @@ call togglebg#map("<F5>")
 
 " colorscheme railscasts
 
-" **************** CONVENIENCE MAPPINGS ************  
+" **************** CONVENIENCE MAPPINGS ************
 " Set the leader key to comma (normally, it's "\")
 let mapleader = ","
 "
@@ -29,21 +29,21 @@ inoremap <c-l> <esc><c-l>:syntax sync fromstart<CR>a
 set noswapfile
 " Put swapfiles in a central place instead of the current directory.
 " Vim will use the first directory that exists.
-set directory=~/.vim_swap,~/tmp,/var/tmp,$HOME/Local\ Settings/Temp 
+set directory=~/.vim_swap,~/tmp,/var/tmp,$HOME/Local\ Settings/Temp
 
 " Same thing for backup files (see `:help backup`)
-set backupdir=~/.vim_backup,~/tmp,/var/tmp,$HOME/Local\ Settings/Temp 
+set backupdir=~/.vim_backup,~/tmp,/var/tmp,$HOME/Local\ Settings/Temp
 
-" ****************** SCROLLING *********************  
+" ****************** SCROLLING *********************
 set scrolloff=8      " Number of lines from vertical edge to start scrolling
 set sidescrolloff=15 " Number of cols from horizontal edge to start scrolling
 set sidescroll=1     " Number of cols to scroll at a time
 
-" ****************** SPLITTING *********************  
+" ****************** SPLITTING *********************
 set splitright " vsplit makes new pane to the right (not left)
 set splitbelow " split  makes new pane below (not above)
 
-" ****************** SEARCHING *********************  
+" ****************** SEARCHING *********************
 set incsearch     " do incremental searching
 set ignorecase    " do case-insensitive searches
 set smartcase     " ... unless the search contains upper-case characters
@@ -53,7 +53,7 @@ set hlsearch      " highlight all matched terms
 " Pressing control + return also clears (for use in NERDTree)
 :nnoremap <c-CR> :nohlsearch<CR>/<BS>
 
-" ***************** TABS ***************************  
+" ***************** TABS ***************************
 " Usually, you want 2 spaces per tab, so these lines make this the default.
 " There are ways to make vi do clever things with tabs in different
 " situations, like MS Word can, but I *always* want tab to behave the same way
@@ -109,6 +109,23 @@ let g:syntastic_java_javac_config_file_enabled=1
 let g:vim_markdown_folding_disabled=1
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" Remove Trailing Whitespace
+" Removes trailing spaces
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+endfunction
+
+set list listchars=trail:.,extends:>
+autocmd FileWritePre * call TrimWhiteSpace()
+autocmd FileAppendPre * call TrimWhiteSpace()
+autocmd FilterWritePre * call TrimWhiteSpace()
+autocmd BufWritePre * call TrimWhiteSpace()
+
+map <F2> :call TrimWhiteSpace()<CR>
+map! <F2> :call TrimWhiteSpace()<CR>
+
 " FZF Config
 set rtp+=/usr/local/opt/fzf
 nmap <Leader>t :Files<CR>
