@@ -1,4 +1,3 @@
-" utf-8
 scriptencoding utf-8
 set encoding=utf-8
 
@@ -16,6 +15,7 @@ let g:solarized_termtrans=1
 call togglebg#map("<F5>")
 
 " colorscheme railscasts
+" colorscheme gruvbox
 
 " **************** CONVENIENCE MAPPINGS ************
 " Set the leader key to comma (normally, it's "\")
