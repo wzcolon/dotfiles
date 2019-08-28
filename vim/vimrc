@@ -140,3 +140,8 @@ let g:fzf_action = {
   \ 'ctrl-h':  'botright split',
   \ 'ctrl-v':  'vertical botright split' }
 
+" vim-terraform
+let g:terraform_align=1
+let g:terraform_fold_sections=1
+let g:terraform_remap_spacebar=1
+let g:terraform_commentstring='//%s'
