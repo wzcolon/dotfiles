@@ -1,7 +1,6 @@
 alias tmux='TERM=screen-256color-bce tmux'
 
 # Terraform Aliases
-alias tf='terraform'
 alias tf="terraform"
 alias tfa="terraform apply"
 alias tfd="terraform destroy"
