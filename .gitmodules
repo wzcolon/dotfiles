@@ -112,3 +112,6 @@
 [submodule "vim/bundle/vim-terraform"]
 	path = vim/bundle/vim-terraform
 	url = git@github.com:hashivim/vim-terraform.git
+[submodule "vim/bundle/nerd-fonts"]
+	path = vim/bundle/nerd-fonts
+	url = git@github.com:ryanoasis/nerd-fonts.git
